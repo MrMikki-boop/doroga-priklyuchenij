@@ -18,4 +18,4 @@ https://github.com/MrMikki-boop/doroga-priklyuchenij/releases/latest/download/mo
 4. Создайте и отправьте тег, совпадающий с версией: например, для 1.0.9 — `git tag v1.0.9`, затем `git push origin v1.0.9`.
 5. Workflow `.github/workflows/release.yml` проверит версию, соберёт ZIP и опубликует релиз с двумя файлами: `module.json` и архивом модуля. Уже опубликованные релизы не перезаписываются.
 
-Локальная сборка: `powershell -NoProfile -File tools/build-release.ps1`. Результат находится в `dist`. Служебные файлы и инструкция Dropbox в архив не включаются.
+Локальная сборка: `powershell -NoProfile -File tools/build-release.ps1`. Результат находится в `dist`. Служебные файлы в архив не включаются.
