@@ -1,0 +1,54 @@
+name: Publish Foundry module
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: windows-latest
+    defaults:
+      run:
+        shell: pwsh
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - name: Validate release and build ZIP
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $m = Get-Content module.json -Raw | ConvertFrom-Json
+          $tag = "v$($m.version)"
+          if ($env:GITHUB_REF_TYPE -ne 'tag' -or $env:GITHUB_REF_NAME -ne $tag) {
+            throw "Run this workflow on tag $tag. The tag must match module.json."
+          }
+          $repo = "https://github.com/$env:GITHUB_REPOSITORY"
+          if ($m.manifest -ne "$repo/releases/latest/download/module.json") { throw 'Incorrect manifest URL' }
+          if ($m.download -ne "$repo/releases/download/$tag/$($m.id)-$($m.version).zip") { throw 'Incorrect download URL' }
+          foreach ($file in @($m.esmodules) + @($m.scripts)) {
+            if (!$file) { continue }
+            node --check $file
+            if ($LASTEXITCODE -ne 0) { throw "Invalid JavaScript: $file" }
+          }
+          foreach ($language in $m.languages) {
+            Get-Content -LiteralPath $language.path -Raw | ConvertFrom-Json | Out-Null
+          }
+          & ./tools/build-release.ps1
+      - name: Publish release assets
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $m = Get-Content module.json -Raw | ConvertFrom-Json
+          $tag = "v$($m.version)"
+          gh release create $tag "dist/module.json" "dist/$($m.id)-$($m.version).zip" --repo $env:GITHUB_REPOSITORY --verify-tag --title "$($m.title) $($m.version)" --generate-notes
+          if ($LASTEXITCODE -ne 0) { throw 'Release creation failed; existing releases are not overwritten.' }

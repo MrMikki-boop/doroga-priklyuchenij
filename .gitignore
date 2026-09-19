@@ -1,0 +1,7 @@
+dist/
+.idea/
+.audit/
+DROPBOX.md
+packs/**/LOCK
+packs/**/LOG
+packs/**/LOG.old
