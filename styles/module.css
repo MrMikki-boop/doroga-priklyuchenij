@@ -1,0 +1,200 @@
+/* ==========================================
+   1. BACKGROUND & GENERAL WINDOW SHELL
+   ================================---------- */
+.doroga-adventure {
+  background: url("../images/background.png") no-repeat center center !important;
+  background-size: 100% 100% !important;
+}
+
+/* Ensure window content remains entirely transparent */
+.doroga-adventure .window-content,
+.doroga-adventure .window-content {
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  border: none !important;
+  outline: none !important;
+}
+
+/* ==========================================
+   2. HEADER FILL (Тёмная верхняя панель)
+   ================================---------- */
+.doroga-adventure .window-header,
+.doroga-adventure .window-header {
+  background: rgba(43, 29, 12, 0.88) !important; /* Тёмный, глубокий древесно-коричневый оттенок */
+  border-bottom: 1px solid rgba(139, 69, 19, 0.5) !important;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  padding: 6px 10px !important;
+}
+
+/* Светлый текст и иконки для идеального контраста на тёмном фоне */
+.doroga-adventure .window-header .window-title {
+  color: #f5eedc !important; /* Светлый мягкий пергаментный оттенок */
+  font-weight: bold;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8) !important;
+}
+
+.doroga-adventure .window-header button,
+.doroga-adventure .window-header a {
+  color: #f5eedc !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8) !important;
+}
+
+.doroga-adventure .window-header button:hover {
+  color: #ffcc66 !important; /* Золотистый акцент при наведении на крестик/шестерёнку */
+}
+
+
+/* ==========================================
+   3. CONTENT SECTIONS (Borderless & Clean)
+   ================================---------- */
+.doroga-adventure .window-content section,
+.doroga-adventure .window-content form > div,
+.doroga-adventure .sheet-body {
+  background: transparent !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.doroga-adventure img,
+.doroga-adventure .adventure-image,
+.doroga-adventure figure {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+
+/* ==========================================
+   4. TYPOGRAPHY & TEXT STYLING (BOLD & CRISP)
+   ================================---------- */
+
+.doroga-adventure {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Main Title */
+.doroga-adventure h1 {
+  color: #1f1307 !important;
+  font-weight: 700 !important;
+  text-shadow: none !important;
+}
+
+/* Section Headings ("Обзор", "Содержимое") */
+.doroga-adventure h2,
+.doroga-adventure h3,
+.doroga-adventure .header-text {
+  color: #261709 !important;
+  font-weight: 700 !important;
+  text-shadow: none !important;
+  border-bottom: none !important;
+}
+
+/* Body Text / Paragraphs */
+.doroga-adventure p, 
+.doroga-adventure span, 
+.doroga-adventure li {
+  color: #24160a !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.2px !important;
+  text-shadow: none !important;
+}
+
+
+/* ==========================================
+   5. ICONS & LIST STYLING
+   ================================---------- */
+
+.doroga-adventure i,
+.doroga-adventure .directory-item i,
+.doroga-adventure .content-link i {
+  color: #5c3a21 !important;
+  filter: none !important;
+}
+
+.doroga-adventure .document-count,
+.doroga-adventure ul li {
+  color: #24160a !important;
+  font-weight: 500 !important;
+  text-shadow: none !important;
+}
+
+
+/* ==========================================
+   6. IMPORT BUTTON STYLING
+   ================================---------- */
+
+.doroga-adventure button:not(.window-header button),
+.doroga-adventure .import-adventure {
+  background: linear-gradient(to bottom, #d4a373, #b07d4d) !important;
+  color: #2b1d0c !important;
+  font-weight: bold !important;
+  border: 1px solid #5c3a21 !important;
+  border-radius: 4px !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+  text-shadow: none !important;
+}
+
+.doroga-adventure button:not(.window-header button):hover,
+.doroga-adventure .import-adventure:hover {
+  background: linear-gradient(to bottom, #e3b78c, #c4915e) !important;
+  box-shadow: 0 0 6px rgba(139, 69, 19, 0.5) !important;
+  color: #1a1107 !important;
+}
+
+/* Compact options in the empty area beneath the Adventure contents. */
+.doroga-adventure .adventure-contents .doroga-import-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 24px 0 0 !important;
+  padding-top: 12px;
+  border-top: 1px solid rgba(92, 58, 33, 0.45);
+}
+
+.doroga-adventure .adventure-contents .doroga-import-options label {
+  display: flex !important;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  font-size: 1.08em;
+  font-weight: 800;
+  line-height: 1.25;
+  white-space: normal;
+}
+
+.doroga-adventure .adventure-contents .doroga-import-options label span {
+  display: block;
+  flex: 1 1 auto;
+  font-weight: 800 !important;
+}
+
+.doroga-adventure .adventure-contents .doroga-import-options input {
+  flex: 0 0 auto;
+  margin: 0;
+  position: relative;
+  top: -1px;
+}
+
+.doroga-adventure .doroga-import-options h2 { margin: 0 0 4px; }
+.doroga-adventure .doroga-import-options input:focus-visible { outline: 2px solid #5c3a21; outline-offset: 3px; }
+.doroga-adventure .adventure-contents > .doroga-import-column { flex: 1; min-width: 250px; }
+.doroga-adventure .doroga-import-column .import-controls { width: 100%; }
+
+/* Reserve the background's right-hand ornament instead of covering it with content. */
+.doroga-adventure .window-content {
+  padding-right: 52px;
+}
+.doroga-adventure .import-controls label.checkbox {
+  color: #24160a;
+  text-shadow: none;
+}
+.doroga-adventure .doroga-import-options label span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}

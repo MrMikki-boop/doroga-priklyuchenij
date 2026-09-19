@@ -1,0 +1,110 @@
+{
+  "id": "doroga-priklyuchenij",
+  "title": "Дорога приключений",
+  "version": "1.0.8",
+  "compatibility": {
+    "minimum": "14",
+    "verified": "14",
+    "maximum": "14"
+  },
+  "authors": [
+    {
+      "name": "Артур",
+      "url": "https://boosty.to/faceted.dms",
+      "discord": "@lossur",
+      "flags": {}
+    },
+    {
+      "name": "Магомед",
+      "url": "https://boosty.to/faceted.dms",
+      "discord": "@chelovecow",
+      "flags": {}
+    },
+    {
+      "name": "MaxKoffing",
+      "url": "https://github.com/MrMikki-boop",
+      "discord": "@maxkoffing"
+    }
+  ],
+  "esmodules": [
+    "scripts/main.js"
+  ],
+  "styles": [
+    {
+      "src": "styles/module.css"
+    }
+  ],
+  "flags": {
+    "canUpload": true
+  },
+  "media": [
+    {
+      "type": "setup",
+      "url": "modules/doroga-priklyuchenij/packs/splash.jpg",
+      "loop": false,
+      "flags": {}
+    }
+  ],
+  "packs": [
+    {
+      "name": "Magomed-Artur",
+      "label": "Дорога приключений",
+      "path": "packs/Magomed-Artur",
+      "type": "Adventure",
+      "system": "dnd5e",
+      "ownership": {
+        "PLAYER": "NONE",
+        "TRUSTED": "NONE",
+        "ASSISTANT": "OWNER"
+      }
+    }
+  ],
+  "relationships": {
+    "systems": [
+      {
+        "id": "dnd5e",
+        "type": "system",
+        "compatibility": {
+          "minimum": "5.3.3"
+        }
+      }
+    ]
+  },
+  "url": "https://boosty.to/faceted.dms",
+  "description": "<p>Путь из Берегоста во Врата Балдура обычно считается безопасным. По Великому Тракту ежедневно проходят торговые караваны, наёмники и путешественники. Однако в последние недели ситуация изменилась. В городе возник дефицит масла, из-за чего стража тщательно проверяет все грузы и временно ограничивает движение по дороге.</p><p>На первый взгляд героям предстоит обычное путешествие. Но по мере продвижения они столкнутся с бандитами, древним хранителем леса и подозрительным торговцем, который может оказаться куда опаснее, чем кажется.</p><p>Это приключение сочетает исследование, социальные взаимодействия и боевые столкновения.</p>",
+  "packFolders": [
+    {
+      "name": "Дорога Приключений",
+      "sorting": "m",
+      "packs": [
+        "Magomed-Artur"
+      ],
+      "color": "#b38e29"
+    }
+  ],
+  "languages": [
+    {
+      "lang": "ru",
+      "name": "Русский",
+      "path": "lang/ru.json"
+    },
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "quickstart": {
+    "adventures": {
+      "dnd5e": {
+        "uuid": "Compendium.doroga-priklyuchenij.Magomed-Artur.Adventure.bphXMqM3odq3z373"
+      }
+    },
+    "postImport": false,
+    "world": {
+      "description": "<p>Путь из Берегоста во Врата Балдура обычно считается безопасным. По Великому Тракту ежедневно проходят торговые караваны, наёмники и путешественники. Однако в последние недели ситуация изменилась. В городе возник дефицит масла, из-за чего стража тщательно проверяет все грузы и временно ограничивает движение по дороге.</p><p>На первый взгляд героям предстоит обычное путешествие. Но по мере продвижения они столкнутся с бандитами, древним хранителем леса и подозрительным торговцем, который может оказаться куда опаснее, чем кажется.</p><p>Это приключение сочетает исследование, социальные взаимодействия и боевые столкновения.</p>",
+      "background": "modules/doroga-priklyuchenij/packs/adventure-cover.png",
+      "cover": "modules/doroga-priklyuchenij/packs/splash.jpg"
+    }
+  }
+}

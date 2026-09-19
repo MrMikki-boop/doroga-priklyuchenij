@@ -1,0 +1,13 @@
+{
+  "DOROGA": {
+    "Options": "Options",
+    "ActivateScene": "Activate the starting scene",
+    "DisplayJournal": "Show the introductory journal",
+    "CustomizeWorld": "Change the world description and background",
+    "MissingScene": "The starting scene is missing. Import the adventure scenes.",
+    "MissingJournal": "The GM guide is missing. Import the adventure journal.",
+    "MissingPack": "The adventure compendium was not found.",
+    "MissingAdventure": "The adventure was not found in its compendium.",
+    "StartupError": "Could not open the adventure"
+  }
+}
